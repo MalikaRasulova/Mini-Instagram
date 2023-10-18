@@ -1,5 +1,4 @@
-namespace MiniInstagram.Entity;
-
+﻿namespace MiniInstagram.Domain.Dtos;
 public class ApiResult<T>
 {
     public T? Data { get; set; }

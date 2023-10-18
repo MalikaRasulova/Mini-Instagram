@@ -1,14 +1,14 @@
-using Microsoft.EntityFrameworkCore;
-using PictureSharing.Entity;
+﻿using Microsoft.EntityFrameworkCore;
+using MiniInstagram.Domain;
 
 namespace MiniInstagram.Interface;
 
-public interface IBaseRepository<T> where T : BaseModel
+public interface IBaseRepository<T, TId> where T : BaseModel<TId>
 {
     public DbSet<T> DbGetSet();
     public ValueTask<IEnumerable<T>> GetAllAsync();
-    public ValueTask<T> GetByIdAsync(long id);
+    public ValueTask<T> GetByIdAsync(TId id);
     public ValueTask<T> CreatAsync(T data);
     public ValueTask<T> UpdateAsync(T data);
-    public ValueTask<T> RemoveAsync(long id);
+    public ValueTask<T> DeleteAsync(TId id);
 }

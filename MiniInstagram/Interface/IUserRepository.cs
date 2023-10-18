@@ -1,8 +1,7 @@
-using MiniInstagram.Entity;
-
+﻿
+using MiniInstagram.Domain.Entity;
 namespace MiniInstagram.Interface;
-
-public interface IUserRepository : IBaseRepository<User>
+public interface IUserRepository : IBaseRepository<User,long>
 {
     
 }
